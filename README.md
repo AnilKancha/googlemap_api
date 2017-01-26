@@ -1,2 +1,2 @@
 # googlemap_api
-location of Bit's Innovation Kathmandu, Nepal
+google API for Bit's Innovation
