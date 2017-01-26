@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<title>Bit's Innovation Location</title>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <style>
+
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <!-- <h3>My Google Maps Demo</h3> 27.689657, 85.332028-->
+    <div id="map"></div>
+    
+    <script>
+      function initMap() {
+        var uluru = {lat: 27.689657, lng: 85.332028};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+
+        });
+
+            var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Bits Innovation</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>New Baneshwor</b> (Opposite to Alpha Beta Complex)'+ 
+            '<p><b>Phone: </b>9840061616'+
+            '<p><b>Email: </b>info@bitsinnovation.com'+
+            '<p>Santosh Purbey, CTO'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+          title: 'Uluru (Ayers Rock)'
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+     
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEu9z3O61-Qtwe4KVK2K916FDIUHcsYjA&callback=initMap">
+    </script>
+ 
+  </body>
+</html>
